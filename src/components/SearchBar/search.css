@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+}
+.searchbar {
+width: 17rem;
+padding: 0.5rem 0.3rem;
+border: 1px solid black;
+border-radius: 0.5rem 0 0 0.5rem;
+}
+.rectangle {
+height: 2.2rem;
+width: 2.7rem;
+background-color: white;
+border: 1px solid black;
+border-radius: 0 0.5rem 0.5rem 0;
+cursor: pointer;
+}
+.center {
+box-sizing: border-box;
+padding-left: 0.7rem;
+padding-top: 0.4rem;
+}
+  

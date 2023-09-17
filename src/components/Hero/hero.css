@@ -1,0 +1,9 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .promotion {
+    color: var(--white-color);
+    text-align: center;
+  }
