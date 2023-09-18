@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../Logo/logo.jsx";
 import SearchBar from "../SearchBar/search.jsx";
-import Button from "../button/button.jsx";
+import Button from "../Button/button.jsx";
 import Hero from "../Hero/hero.jsx";
+import Card from "../Card/card.jsx";
 import "./navBar.css";
 
 const NavBar = () => {
@@ -14,6 +15,7 @@ const NavBar = () => {
         <Button text="Give Feedback" />
       </nav>
       <Hero />
+      <Card no_Follows="100 Follows" Genre="New English Songs"/>
     </div>
   );
 };

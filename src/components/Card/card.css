@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 18rem;
+    padding: 1rem;
+}
+.top-part {
+    width: 10rem;
+    height: 13rem;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+    background-color: var(--white-color);
+}
+.image {
+    width: 10rem;
+    height: 11rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+    background-color: var(--white-color);    
+}
+.follows {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+.oval {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--black-color);
+}
+.bottom-part {
+    display: block;
+    padding-left: 0.2rem;
+    color: var(--white-color);
+}
