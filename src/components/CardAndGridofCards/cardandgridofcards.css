@@ -1,9 +1,22 @@
+div {
+    box-sizing: border-box;
+}
+.top-album-heading {
+    color: var(--white-color);
+    padding-left: 0.5rem;
+}
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
 .card {
     display: flex;
     flex-direction: column;
     width: 13rem;
-    height: 18rem;
-    padding: 1rem;
+    height: 16.5rem;
+    padding: 0.5rem;
 }
 .top-part {
     width: 10rem;
@@ -20,6 +33,7 @@
 .follows {
     display: flex;
     align-items: center;
+    padding-top: 0.3rem;
     padding-left: 0.5rem;
 }
 .oval {

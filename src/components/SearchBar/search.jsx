@@ -4,7 +4,7 @@ import { ReactComponent as SVG } from "../../assets/searchIcon.svg";
 
 const SearchBar = ({ placeholderText }) => {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       <input className="searchbar" type="text" placeholder={placeholderText} />
       <div className="rectangle">
         <div className="center">
