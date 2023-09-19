@@ -1,0 +1,16 @@
+.wrapper {
+    width: 10rem;
+}
+.card {
+    position: relative;
+    width: 10rem;
+    height: 17rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+}
+.title {
+    margin-top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--white-color);
+}

@@ -17,7 +17,7 @@ const Card = ({ albumData }) => {
         <div className="card" key={index}>
           <div className="top-part">
             <div className="image">
-              <img src= {item.image} alt= {item.title} style={{height: "11rem", width: "10rem", objectFit: "cover"}}/>
+              <img src= {item.image} alt= {item.title} style={{height: "11rem", width: "10rem", objectFit: "cover" , borderRadius: "0.8rem 0.8rem 0.8rem 0.8rem"}}/>
             </div>
 
             <div className="follows">

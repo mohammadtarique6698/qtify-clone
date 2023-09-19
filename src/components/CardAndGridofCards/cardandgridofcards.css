@@ -26,9 +26,7 @@ div {
 }
 .image {
     width: 10rem;
-    height: 11rem;
-    border-radius: 0.8rem 0.8rem 0 0;
-    background-color: var(--white-color);    
+    height: 11rem;    
 }
 .follows {
     display: flex;

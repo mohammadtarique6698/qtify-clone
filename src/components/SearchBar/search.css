@@ -17,7 +17,8 @@ cursor: pointer;
 }
 .center {
 box-sizing: border-box;
-padding-left: 0.7rem;
-padding-top: 0.4rem;
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+padding-top: 0.5rem;
 }
   
