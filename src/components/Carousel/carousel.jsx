@@ -1,25 +1,29 @@
 import React, { useEffect } from "react";
-import { Swiper } from "swiper";
-import { SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import {Swiper} from 'swiper/react'
+import { SwiperSlide } from 'swiper/react';
+import {useSwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper';
+import { useSwiper } from 'swiper/react';
 import LeftNavigation from "./Carousel-left-navigation/carouselLeftNavigation.jsx";
 import RightNavigation from "./Carousel-right-navigation/carouselRightNavigation.jsx";
-import "swiper/swiper-bundle.css"; // Import Swiper's CSS
 import "./carousel.css";
 
 const Controls = ({ data }) => {
-  //const swiper = useSwiper();
+  //console.log(data)
+  const swiper = useSwiper();
 
   useEffect(() => {
-    Swiper.slideTo(0);
+    swiper.slideTo(0);
   }, [data]);
+  return <></>
 };
 
-const carousel = ({ data, component }) => {
+const Carousel = ({ data, component }) => {
   return (
     <div className="swipper-wrapper">
       <Swiper
-        sx={{ padding: "0 20px" }}
+        style={{ padding: "0 20px" }}
         initialSlide={0}
         modules={[Navigation]}
         slidesPerView={"auto"}
@@ -31,11 +35,11 @@ const carousel = ({ data, component }) => {
         <RightNavigation />
 
         {data.map((item) => {
-          return <SwiperSlide>{component(item)}</SwiperSlide>;
+          return (<SwiperSlide>{component(item)}</SwiperSlide>);
         })}
       </Swiper>
     </div>
   );
 };
 
-export default carousel;
+export default Carousel;

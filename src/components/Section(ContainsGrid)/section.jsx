@@ -23,7 +23,8 @@ const Section = ({ title, data, type }) => {
         </Box>
       ) : (
         <div className="wrapper-class">
-          {!toggle?
+          {console.log("toggle", toggle)}
+          {toggle?
             <div className="grid-wrapper">
               {data.map((item) => (
                 <Card data={item} type="album" />
