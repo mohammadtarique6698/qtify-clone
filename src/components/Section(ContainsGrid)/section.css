@@ -1,0 +1,27 @@
+.section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.toggle-text {
+  padding: 0.5rem;
+  color: var(--primary-color);
+  background-color: var(--black-color);
+  border: 0;
+  cursor: pointer;
+}
+.wrapper-class {
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.grid-wrapper {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
