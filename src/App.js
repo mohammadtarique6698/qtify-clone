@@ -15,7 +15,6 @@ import "./App.css"
 const App = () => {
   const [topAlbumData, setTopAlbumData] = useState([]);
   const [newAlbumData, setNewAlbumData] = useState([]);
-  const [newSongs, setNewSongs] = useState([])
 
   const getTopAlbumData = async () => {
     try {
@@ -46,10 +45,6 @@ const App = () => {
     }
   }
 
-  const filteredData = (val) => {
-    setNewSongs(val);
-  }
-
   useEffect(() => {
     getTopAlbumData();
   }, []);
@@ -61,6 +56,12 @@ const App = () => {
   useEffect(() => {
     getNewSongs();
   }, []);
+
+  const [newSongs, setNewSongs] = useState([])
+
+  const filteredData = (val) => {
+    setNewSongs(val);
+  }
 
   return (
     <div className="App">
