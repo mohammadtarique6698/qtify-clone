@@ -1,24 +1,33 @@
-import React, {useState, useEffect} from 'react'
-import { Swiper } from 'swiper'
-//import { useSwiper } from 'swiper/react';
-import {ReactComponent as RightArrow} from "../../../assets/right-navigation.svg"
-import "./carousel-right-navigation.css"
+import React, { useState, useEffect } from 'react';
+import { ReactComponent as RightArrow } from '../../../assets/right-navigation.svg';
+import "./carousel-right-navigation.css";
 
-
-const Carouselrightnavigation = () => {
-  //const swiper = useSwiper();
-  const [isEnd, setEnd] = useState(Swiper.isEnd)
-
+const CarouselRightNavigation = ({ swiper }) => {
   useEffect(() => {
-    Swiper.on("slideChange", function() {
-      setEnd(Swiper.isEnd)
-    })
-  }, [])
-  return (
-    <div className= "rightNav">
-      {!isEnd && <RightArrow onClick={() => Swiper.slideNext()} />}
-    </div>
-  )
-}
+    if (swiper.current) {
+      swiper.current.on('slideChange', () => {
+        // Check if the swiper is at the end
+        setIsEnd(swiper.current.isEnd);
+      });
+    }
+  }, [swiper]);
 
-export default Carouselrightnavigation;
+  const handleNextSlide = () => {
+    if (swiper.current) {
+      swiper.current.slideNext();
+    }
+  };
+
+  const [isEnd, setIsEnd] = useState(true);
+
+  return (
+    <div className="rightNav">
+      {<RightArrow onClick={handleNextSlide} />}
+    </div>
+  );
+};
+
+export default CarouselRightNavigation;
+
+
+
