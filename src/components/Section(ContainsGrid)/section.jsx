@@ -19,21 +19,20 @@ const Section = ({ title, data, type, filteredData = null }) => {
   };
 
   const generateGenreSongsData = (search_criteria) => {
-    console.log("Search Criteria:", search_criteria);
-    let res = [...data];
+    //console.log("Search Criteria:", search_criteria);
+    let res = data;
     if (search_criteria) {
-      res = [...data].filter(
+      res = data.filter(
         (item) => item.genre.label.toLowerCase() === search_criteria
       );
     }
-    console.log("Filtered Data:", res);
+    //console.log("Filtered Data:", res);
     setSongData(res);
   };
-  
 
   useEffect(() => {
-    if(value===0) {
-      generateGenreSongsData("")
+    if (value === 0) {
+      generateGenreSongsData("");
     }
     if (value === 1) {
       generateGenreSongsData("rock");
@@ -47,7 +46,7 @@ const Section = ({ title, data, type, filteredData = null }) => {
     if (value === 4) {
       generateGenreSongsData("blues");
     }
-  }, [value]);
+  }, [value, data]);
 
   return (
     <div className="section">
@@ -59,7 +58,9 @@ const Section = ({ title, data, type, filteredData = null }) => {
           </button>
         ) : null}
       </div>
-      {type === "songs" ? <BasicTabs value={value} handleChange={handleChange} /> : null}
+      {type === "songs" ? (
+        <BasicTabs value={value} handleChange={handleChange} />
+      ) : null}
       {data.length === 0 ? (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
@@ -78,10 +79,12 @@ const Section = ({ title, data, type, filteredData = null }) => {
               data={songData}
               component={(data) => <Card data={data} type={type} />}
             />
-          ) : <Carousel
-          data={data}
-          component={(data) => <Card data={data} type={type} />}
-        />}
+          ) : (
+            <Carousel
+              data={data}
+              component={(data) => <Card data={data} type={type} />}
+            />
+          )}
         </div>
       )}
     </div>
@@ -89,4 +92,3 @@ const Section = ({ title, data, type, filteredData = null }) => {
 };
 
 export default Section;
-

@@ -8,13 +8,14 @@ import Section from "./components/Section(ContainsGrid)/section.jsx";
 import { fetchTopAlbums } from "./APIcall/apicall.jsx";
 import { fetchNewAlbums } from "./APIcall/apicall.jsx";
 import { fetchSongs } from "./APIcall/apicall.jsx";
-import 'swiper/css';
-import "./App.css"
-
+import Accordion from "../src/components/FAQ/faq.jsx"
+import "swiper/css";
+import "./App.css";
 
 const App = () => {
   const [topAlbumData, setTopAlbumData] = useState([]);
   const [newAlbumData, setNewAlbumData] = useState([]);
+  const [newSongs, setNewSongs] = useState([]);
 
   const getTopAlbumData = async () => {
     try {
@@ -27,23 +28,23 @@ const App = () => {
   };
 
   const getNewAlbumData = async () => {
-    try{
+    try {
       const res2 = await fetchNewAlbums();
-      setNewAlbumData(res2)
-    } catch(err) {
-      console.error(err)
+      setNewAlbumData(res2);
+    } catch (err) {
+      console.error(err);
     }
-  }
+  };
 
   const getNewSongs = async () => {
     try {
       const res3 = await fetchSongs();
       //console.log(newSongs)
-      setNewSongs(res3)
-    } catch(err) {
-      console.error(err)
+      setNewSongs(res3);
+    } catch (err) {
+      console.error(err);
     }
-  }
+  };
 
   useEffect(() => {
     getTopAlbumData();
@@ -57,22 +58,26 @@ const App = () => {
     getNewSongs();
   }, []);
 
-  const [newSongs, setNewSongs] = useState([])
-
   const filteredData = (val) => {
     setNewSongs(val);
-  }
+  };
 
   return (
     <div className="App">
       <NavigationBar />
-      <div className= "main-section-wrapper">
+      <div className="main-section-wrapper">
         <Section title="Top Albums" data={topAlbumData} type="album" />
         <Section title="New Albums" data={newAlbumData} type="album" />
       </div>
       <div className="song-section">
-        <Section title="Songs" data={newSongs} type="songs" filteredData={filteredData}/>
+        <Section
+          title="Songs"
+          data={newSongs}
+          type="songs"
+          filteredData={filteredData}
+        />
       </div>
+      <Accordion />
       <div className="space"></div>
       <Footer year="2023" name="Mohammad Tarique" />
     </div>
