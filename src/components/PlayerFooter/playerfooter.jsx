@@ -38,48 +38,50 @@ const Playerfooter = ({ data1, data2, data3, selectedSong }) => {
   //    console.log(titlesAndImagesOfAlbumSongs);
 
   return (
-    <div className="player">
-      <div
-        style={{ display: "flex", width: "15%", justifyContent: "flex-end" }}
-      >
-        {selectedSong.image ? (
-          <img
-            style={{
-              height: "10rem",
-              width: "8rem",
-              borderRadius: "0.5rem",
-              border: "0",
-              objectFit: "cover",
-            }}
-            src={selectedSong.image}
-            alt={selectedSong.title}
-          />
-        ) : (
-          <p
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              color: "var(--white-color)",
-            }}
-          >
-            No Image
-          </p>
-        )}
-      </div>
-      <div className="song-name">
-        <h3>{selectedSong.title}</h3>
-      </div>
-      <div className="player-and-play-button">
-        <button style={{ borderRadius: "3rem" }}>
-          <PlayButton />
-        </button>
-        <span style={{ paddingTop: "1rem", paddingBottom: "1rem" }}></span>
-        <div className="player-bar">
-          <p style={{ paddingRight: "0.5rem", color: "var(--white-color)" }}>
-            0:00
-          </p>
-          <Bar />
+    <div style={{ paddingTop: "2rem" }}>
+      <div className="player">
+        <div
+          style={{ display: "flex", width: "15%", justifyContent: "flex-end" }}
+        >
+          {selectedSong.image ? (
+            <img
+              style={{
+                height: "10rem",
+                width: "8rem",
+                borderRadius: "0.5rem",
+                border: "0",
+                objectFit: "cover",
+              }}
+              src={selectedSong.image}
+              alt={selectedSong.title}
+            />
+          ) : (
+            <p
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                color: "var(--white-color)",
+              }}
+            >
+              No Image
+            </p>
+          )}
+        </div>
+        <div className="song-name">
+          <h3>{selectedSong.title}</h3>
+        </div>
+        <div className="player-and-play-button">
+          <button style={{ borderRadius: "3rem" }}>
+            <PlayButton />
+          </button>
+          <span style={{ paddingTop: "1rem", paddingBottom: "1rem" }}></span>
+          <div className="player-bar">
+            <p style={{ paddingRight: "0.5rem", color: "var(--white-color)" }}>
+              0:00
+            </p>
+            <Bar />
+          </div>
         </div>
       </div>
     </div>
